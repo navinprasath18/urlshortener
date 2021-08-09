@@ -23,3 +23,8 @@
 hs_err_pid*
 /.metadata/
 urlShortenerService/.mvn/wrapper/maven-wrapper.jar
+.DS_Store
+urlShortenerService/.mvn/wrapper/MavenWrapperDownloader.java
+urlShortenerService/.mvn/wrapper/maven-wrapper.properties
+urlShortenerService/mvnw.cmd
+urlShortenerService/mvnw
