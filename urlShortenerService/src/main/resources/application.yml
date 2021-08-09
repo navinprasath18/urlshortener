@@ -1,1 +1,9 @@
-
+spring:
+  data:
+    cassandra:
+      username: cassandra
+      password: cassandra
+      keyspace: urlkeyspace 
+      port: 9042
+      schema-action: NONE
+      contact-points: localhost

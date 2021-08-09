@@ -10,16 +10,11 @@ services:
     
   cassandra:
     container_name: urlshortener-cassandra
-    image: docker.io/bitnami/cassandra:3
+    image: cassandra:3
     ports:
       - '7000:7000'
       - '9042:9042'
-    volumes:
-      - 'cassandra_data:/bitnami'
-    environment:
-      - CASSANDRA_SEEDS=cassandra
-      - CASSANDRA_PASSWORD_SEEDER=yes
-      - CASSANDRA_PASSWORD=cassandra
+    
 volumes:
   cassandra_data:
     driver: local
