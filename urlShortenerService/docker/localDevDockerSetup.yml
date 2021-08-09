@@ -1,11 +1,25 @@
-sversion: '3.7'
+version: '3.7'
 services:
   urlshortener-redis:
-    container_name: transformation-service-redis
+    container_name: urlshortener-redis
     image: redis:alpine
     expose:
-    - 6379
+    - 6370
     ports:
-    - 6379:6379
+    - 6370:6370
+    
+  cassandra:
+    container_name: urlshortener-cassandra
+    image: docker.io/bitnami/cassandra:3
+    ports:
+      - '7000:7000'
+      - '9042:9042'
+    volumes:
+      - 'cassandra_data:/bitnami'
+    environment:
+      - CASSANDRA_SEEDS=cassandra
+      - CASSANDRA_PASSWORD_SEEDER=yes
+      - CASSANDRA_PASSWORD=cassandra
 volumes:
-  database: null
+  cassandra_data:
+    driver: local
