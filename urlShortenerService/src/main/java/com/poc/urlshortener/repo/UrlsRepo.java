@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.poc.urlshortener.entity.Urls;
 
 @Repository
-public interface UrlsRepo extends CassandraRepository<Urls, Long> {
+public interface UrlsRepo extends CassandraRepository<Urls, String> {
 
 }

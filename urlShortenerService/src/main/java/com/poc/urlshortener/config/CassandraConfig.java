@@ -12,7 +12,7 @@ import org.springframework.data.cassandra.repository.config.EnableCassandraRepos
 import lombok.Getter;
 
 @Configuration
-@EnableCassandraRepositories
+@EnableCassandraRepositories(basePackages = "com.poc.urlshortener.repo")
 @Getter
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
@@ -38,8 +38,6 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 	public SchemaAction getSchemaAction() {
 		return SchemaAction.CREATE_IF_NOT_EXISTS;
 	}
-	
-	
 
 	@Override
 	protected List<CreateKeyspaceSpecification> getKeyspaceCreations() {
@@ -47,23 +45,18 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 		return List.of(CreateKeyspaceSpecification.createKeyspace(getKeyspaceName()).ifNotExists()
 				.withSimpleReplication(replicationFactor));
 	}
-	
+
 	@Value("${spring.data.cassandra.keyspace}")
-    private String keyspace;
+	private String keyspace;
 
-    @Override
-    protected String getKeyspaceName() {
-        return getKeyspace();
-    }
-    
-    
-    @Override
-    public String getContactPoints() {
-      return "127.0.0.1";
-    }
+	@Override
+	protected String getKeyspaceName() {
+		return getKeyspace();
+	}
 
-
-
-	
+	@Override
+	public String getContactPoints() {
+		return "127.0.0.1";
+	}
 
 }

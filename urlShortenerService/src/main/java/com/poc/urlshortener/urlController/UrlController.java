@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.poc.urlshortener.data.UrlData;
-import com.poc.urlshortener.service.UrlService;
+import com.poc.urlshortener.service.UrlServiceImpl;
 
 @RestController
 public class UrlController {
 
 	@Autowired
-	UrlService service;
+	UrlServiceImpl service;
 
 	@GetMapping("/{shortURL}")
 	public void redirect() {
