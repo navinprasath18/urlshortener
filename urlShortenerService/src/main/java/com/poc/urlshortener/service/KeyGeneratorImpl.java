@@ -4,7 +4,7 @@ public class KeyGeneratorImpl implements KeyGenerator {
 
 	@Override
 	public String getKey() {
-		return null;
+		return "url" + Math.random();
 	}
 
 }
