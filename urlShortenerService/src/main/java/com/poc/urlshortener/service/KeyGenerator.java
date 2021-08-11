@@ -2,7 +2,8 @@ package com.poc.urlshortener.service;
 
 public interface KeyGenerator {
 	
-	String getKey();
+
+	String getKey(String url);
 	
 
 }

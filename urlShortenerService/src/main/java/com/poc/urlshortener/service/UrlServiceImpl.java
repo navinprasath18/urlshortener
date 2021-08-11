@@ -29,9 +29,9 @@ public class UrlServiceImpl implements URLservice {
 	@Override
 	@Transactional
 	public UrlData createURL(UrlData data) {
-		Urls urls = new Urls(ketgenerator.getKey(), data.getCompleteURL());
+		Urls urls = new Urls(ketgenerator.getKey(data.getCompleteURL()), data.getCompleteURL());
 		repo.save(urls);
-		data.setShortURL(urls.getShortURL());
+		data.setShortURL("http://localhost:5555/"+urls.getShortURL());
 		return data;
 	}
 
