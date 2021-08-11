@@ -5,5 +5,9 @@ spring:
       password: cassandra
       keyspace: urlkeyspace 
       port: 9042
-      schema-action: NONE
-      contact-points: localhost
+      contact-points: localhost,127.0.0.1
+      schema-action: CREATE_IF_NOT_EXISTS
+      
+      
+server:
+  port: 5555
