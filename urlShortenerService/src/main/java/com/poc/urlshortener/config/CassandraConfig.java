@@ -61,7 +61,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
 	@Override
 	public String[] getEntityBasePackages() {
-		return new String[] { "package com.poc.urlshortener.entity" };
+		return new String[] { "com.poc.urlshortener.entity" };
 	}
 
 }
